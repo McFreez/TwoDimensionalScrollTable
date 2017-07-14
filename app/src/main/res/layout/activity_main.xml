@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="example.com.twodimensionscrolltable.MainActivity">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/linearLayout">
+
+        <LinearLayout
+            android:layout_width="56dp"
+            android:layout_height="56dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_menu_white_24dp"
+                android:background="@android:color/black"
+                android:padding="16dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            tools:layout_editor_absoluteX="466dp"
+            tools:layout_editor_absoluteY="0dp">
+
+            <example.com.twodimensionscrolltable.table.DaysRecyclerView
+                android:id="@+id/rv_days"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never"
+                android:scrollbars="vertical"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <LinearLayout
+            android:layout_width="56dp"
+            android:layout_height="match_parent">
+
+            <example.com.twodimensionscrolltable.table.AttributesScrollView
+                android:id="@+id/attributes_scroll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/attributes_container"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:orientation="vertical"
+                            android:layout_weight="1"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp" />
+
+                </LinearLayout>
+
+            </example.com.twodimensionscrolltable.table.AttributesScrollView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <example.com.twodimensionscrolltable.table.DataVerticalScrollView
+                android:id="@+id/data_vertical_scroll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <example.com.twodimensionscrolltable.table.DataRecyclerView
+                        android:id="@+id/rv_data"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:overScrollMode="never"
+                        android:scrollbars="vertical"/>
+
+                    <ImageView
+                        android:id="@+id/button_add_attribute"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:src="@drawable/ic_add_green_24dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:padding="8dp"/>
+
+                </LinearLayout>
+
+            </example.com.twodimensionscrolltable.table.DataVerticalScrollView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
